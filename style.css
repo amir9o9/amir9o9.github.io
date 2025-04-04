@@ -20,13 +20,21 @@ body{
     background-color: hsl(0, 0%, 94%);
 }
 
+.container{
+    height: 95vh;
+    width: 95vw;
+    margin: 0 auto;
+
+}
+
 .wraper{
     border-radius:25px ;
     border-bottom-right-radius: 160px ;
     background-color: white;
-    width: 750px;
-    margin: 50px auto;
-    padding: 60px;
+    width: 40%;
+    margin: 35px auto;
+    padding: 50px;
+    padding-bottom: 30px;
     font-family: inherit;
 }
 
@@ -50,7 +58,6 @@ body{
     border-color: hsl(0, 0%, 86%);
     border-radius: 10px;
 }
-
 /* this part remove number input up and down arrows */
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -132,11 +139,24 @@ label{
     width: 60px;
     height: 60px;
     border-radius: 90%;
-
     position: fixed;
     bottom: 15px;
-    left: 15px;
+    left: 90px;
     z-index: 10;
+    transition: all ease-in 250ms 100ms;
+}
+
+.about_us_btn_lb img{
+    width: 100%;
+    height: 100%;
+}
+
+#close-icon{
+    font-size: 2.5rem;
+    top: 0px;
+    position: absolute;
+    right: 15px;
+    color: red;
 }
 
 .remove_icon{
@@ -144,43 +164,30 @@ label{
     position: fixed;
     bottom: 4px;
     left: 15px;
-
 }
 
-#about_us_btn:checked ~ .remove_icon{
-    display: block;
-}
-
-#about_us_btn:checked ~ .about_us_btn_lb{
-    display: none;
-}
-
-#about_us_btn:checked ~ .about_us{
-    top: 300px;
-    transition: all ease-in 250ms 100ms;
-    transform:  translateY(100px) ;
-
-}
-
-#about_us_btn:checked ~ .wraper{
-    transition: all ease-in 200ms 10ms;
+.wraper-blur{
     filter: blur(10px);
-    
+    transition: all ease-in 250ms 200ms;
 }
 
-.about_us{
+#about_us{
+    font-family: "Poppins-Regular";
     width:490px;
     height: 200px;
-    position: absolute;
-    left:35%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     z-index: 10;
-    top: -250px;
     background: hsl(300, 8%, 93%);
     padding: 10px;
     border-radius: 15px;
-    font-family: "Poppins-Regular";
+    margin: 0 auto;
     font-size: 1.1rem;
+    transition: all ease-in 250ms 100ms;
+    display: none;
 }
 
 .myName{
@@ -194,7 +201,55 @@ label{
     margin-top: 50px;
 }
 
+.body-dark-theme{
+    transition: all ease-in-out 350ms;
+    background-color: rgb(58, 58, 58);
+    color: #fff;
+}
+
+.wraper-dark-theme{
+    transition: all ease-in-out 350ms;
+    background-color: #232323;
+    color: #fff;
+}
+
+.input-dark-theme{
+    background-color: #00000096;
+    color: #fff;
+}
+
+.about-us-dark-theme{
+    background-color: #404040;
+    color: #000000;
+}
+
+#theme{
+    position: absolute;
+    bottom: 100px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 10;
+}
+
+#theme_check_lb{
+    width: 100%;
+    height: 100%;
+}
+
+#theme_check_lb img{
+    width: 100%;
+    height: 100%;
+}
+
 @media screen and (max-width : 920px) {
+    .container{
+        width: 90%;
+        height: 90%;
+    }
     .wraper{
         width:450px ;
     }
@@ -214,5 +269,37 @@ label{
     }
     .about_us{
         width: 290px;
+    }
+}
+
+@media screen and (max-width :1100px) {
+    .container{
+        width: 90%;
+        height: 90%;
+    }
+    .outputForm{
+        font-size: 85px;
+    }
+    #about_us{
+        width: 400px;  
+    }
+}
+
+@media screen and (max-width : 580px){
+    .container{
+        width: 98vh;
+        height: 98vh;
+    }
+    .wraper{
+        padding: 0.8rem;
+    }
+    .outputForm{
+        font-size: 75px;
+        line-height: 7.5rem;
+    }
+    
+    #about_us{
+        width: 300px;
+        
     }
 }
